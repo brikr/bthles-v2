@@ -1,0 +1,27 @@
+{
+  "name": "bthles-v2",
+  "version": "1.0.0",
+  "description": "Minimalistic URL Shortener using GAE/Datastore",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brikr/bthles-v2.git"
+  },
+  "author": "brikr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brikr/bthles-v2/issues"
+  },
+  "homepage": "https://github.com/brikr/bthles-v2#readme",
+  "dependencies": {
+    "@google-cloud/datastore": "^1.4.2",
+    "base62": "^2.0.0",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-google": "^0.10.0"
+  }
+}
