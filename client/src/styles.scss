@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+
+// theme
+@include mat-core();
+
+$bthles-primary: mat-palette($mat-grey);
+$bthles-accent:  mat-palette($mat-pink);
+$bthles-theme: mat-dark-theme($bthles-primary, $bthles-accent);
+@include angular-material-theme($bthles-theme);
+
+// for easier vertical centering
+html, body {
+  // 100 causes scrollbar
+  height: 99%;
+}

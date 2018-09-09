@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Minimalistic URL Shortener using GAE/Datastore",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "cf": "clang-format -style=Google -i src/**/*.ts"
   },
   "repository": {
     "type": "git",
