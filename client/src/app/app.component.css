@@ -5,3 +5,8 @@
 .shrink {
   margin-left: 10px;
 }
+
+.short-url {
+  cursor: pointer;
+  user-select: none;
+}

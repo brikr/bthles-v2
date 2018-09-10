@@ -1,10 +1,15 @@
 <div class="main" fxLayout="column">
   <div fxFlex fxLayout="row" fxLayoutAlign="space-around center">
-    <div fxFlex="75" fxLayout="row" fxLayoutAlign="start center">
+    <div fxFlex="75" fxLayout="row" fxLayoutAlign="start center" *ngIf="state < bthlesState.ShortReceived">
       <mat-form-field fxFlex>
-        <input matInput placeholder="URL" autofocus>
+        <input matInput required placeholder="URL" [(ngModel)]="url" name="url" (keyup.enter)="submit()" autofocus>
       </mat-form-field>
-      <button mat-flat-button color="primary" class="shrink">Shrink</button>
+      <button mat-flat-button color="primary" class="shrink" (click)="submit()" [disabled]="state > bthlesState.Init">Shrink</button>
+    </div>
+    <div fxFlex="75" fxLayout="row" fxLayoutAlign="start center" *ngIf="state == bthlesState.ShortReceived">
+      <mat-form-field fxFlex>
+        <input matInput placeholder="Short URL" [(ngModel)]="shortUrl" name="shortUrl" (click)="copy($event)">
+      </mat-form-field>
     </div>
   </div>
 </div>

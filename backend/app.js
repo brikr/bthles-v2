@@ -1,6 +1,7 @@
 'use strict';
 
 const base62 = require('base62/lib/ascii');
+const cors = require('cors');
 const express = require('express');
 const Datastore = require('@google-cloud/datastore');
 
@@ -10,7 +11,9 @@ const datastore = new Datastore({
   keyFilename: 'bthles-datastore.json',
 });
 
+app.use(cors());
 app.use(express.json());
+app.options('*', cors());
 
 app.get('/', (req, res) => {
   res.status(200).send('static').end();
