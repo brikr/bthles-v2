@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 
-import {BthlesService, LinkCreateResponse} from './bthles.service';
 import {environment} from '../environments/environment';
+
+import {BthlesService, LinkCreateResponse} from './bthles.service';
 
 enum BthlesState {
   Init,
@@ -21,8 +22,9 @@ export class AppComponent {
   shortUrl: string;
   state = BthlesState.Init;
 
-  constructor(private readonly bthlesService: BthlesService,
-              private snackBar: MatSnackBar) {}
+  constructor(
+      private readonly bthlesService: BthlesService,
+      private snackBar: MatSnackBar) {}
 
   submit() {
     if (this.state > BthlesState.Init) return;
@@ -39,8 +41,6 @@ export class AppComponent {
     input.select();
     document.execCommand('copy');
 
-    this.snackBar.open('Copied to clipboard', 'OK', {
-      duration: 3000
-    });
+    this.snackBar.open('Copied to clipboard', 'OK', {duration: 3000});
   }
 }
